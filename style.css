@@ -1,127 +1,85 @@
-*{
-    margin: 0;
-    padding:0;
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
-html{
-    background: black;
-    font-family: "Lexend Deca", sans-serif;
-    color: white;
-    font-weight: 600;
-}
+
 body{
-    min-height: 100vh;
-    align-content: center;
+  overflow-x: hidden;
 }
-.center {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
+:root {
+  --dark-bg: rgba(15, 15, 15, 0.55);
+  --spacing: 210px;
+
+  font-family: "Tilt Warp", serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
 a{
-    text-decoration: none;
-    color: rgb(194, 220, 255);
+  text-decoration: none;
+  color:paleturquoise;
 }
-.parent {
-    border: 1px solid black;
-    margin: 1rem;
-    padding: 2rem 2rem;
-    text-align: center;
-    
-  }
-.projects{
-    display: inline-block;
-    padding: 1rem 1rem;
-    vertical-align: middle;
-    margin-left: 45px;
-    margin-right: 45px;
-    margin-bottom: 45px;
-    margin-top: 45px;
-}
-.card{
-    padding: 2em;
-    width: 400px;
-    height: 330px;
-    background: #24282c;
-    text-align: center;
-    border-radius: 10px;
-    position: relative;
-}
-@property --angle{
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-.card::after, .card::before{
-    
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: rgb(21,14,55);
-    background: conic-gradient(from var(--angle),#150e37 70%, #195392);
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: -1;
-    padding: 4px;
-    border-radius: 10px;
-    animation: 3s spinGrad linear infinite;
-}
-.card::before{
-    filter: blur(2rem);
-}
-@keyframes spinGrad{
-    from{
-        --angle: 0deg;
-    }
-    to{
-        --angle: 360deg;
-    }
-}
-p{
-    font-weight: 200;
-    font-size: 20px;
+main {
+  width: 100vw;
+  color: white;
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  margin: 0px auto;
+  padding: 120px 0px;
+  background: linear-gradient(180deg, rgb(20, 8, 39) 0%,rgba(0, 22, 39, 0.75) 25%, rgba(0, 22, 39, 0.15) 75%);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
 }
 
+h1, h2, h3, blockquote {
+  font-family: "Tilt Warp", serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
-.sqsk{
-    padding: 2em;
-    width: 400px;
-    height: 330px;
-    background: #24282c;
-    text-align: center;
-    border-radius: 10px;
-    position: relative;
+header {
+  transform: translateX(25vw);
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+  background: var(--dark-bg);
+  grid-column: 2 / span 4;
+  font-size: 1.5rem;
+  padding: 2rem;
+  margin-bottom: var(--spacing);
 }
-@property --angles{
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
+
+section {
+  border-radius: 15px;
+  grid-column: 2 / 6;
+  padding: 1rem;
+  background: var(--dark-bg);
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: var(--spacing);
 }
-.sqsk::after, .sqsk::before{
-    
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: rgb(21,14,55);
-    background: conic-gradient(from var(--angles),#195392, #150e37 70%);
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: -1;
-    padding: 4px;
-    border-radius: 10px;
-    animation: 3s spinner linear infinite;
+
+blockquote {
+  margin: 0;
+  padding: 0;
+  grid-column: 2 / span 9;
+  margin-bottom: var(--spacing);
 }
-.sqsk::before{
-    filter: blur(2rem);
+
+blockquote p {
+  font-style: normal;
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
+  background-color: rgba(93, 31, 143, 0.267);
+  font-size: 2rem;
+  display: inline;
+  line-height: 1;
 }
-@keyframes spinner{
-    from{
-        --angles: 360deg;
-    }
-    to{
-        --angles: 0deg;
-    }
+
+.left {
+  grid-column: 2 / 6;
 }
