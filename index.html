@@ -1,87 +1,87 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./image/squair403x403.jpg" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta content="Squair Dev | Home" property="og:title" />
-    <meta content="Squair - a developer" property="og:description" />
-    <meta content="https://squairdev.github.io/three/" property="og:url" />
-    <meta content="https://squair.github.io/three/image/squair403x403.jpg/" property="og:image" />
-    <meta content="#150e37" data-react-helmet="true" name="theme-color" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css">
     <title>Squair Dev | Home</title>
-  </head>
-  
-  <body>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+</head>
+<body onload="rand()">
+    <!--wow ascii art
+    .-------------------------------------.
+    |   ______                   _        |
+    |  / _____)                 (_)       |
+    | ( (____   ____ _   _ _____ _  ____  |
+    |  \____ \ / _  | | | (____ | |/ ___) |
+    |  _____) ) |_| | |_| / ___ | | |_    |
+    | (______/ \__  |____/\_____|_|_(_)   |
+    |             |_|                     |
+    '-------------------------------------'
+    -->
+    <!-- wow navbar -->
+    <div class="header">
+        <header class="typewriter" style="color: #142b61">C:<span style="color:#14528b">/Squair</span><span style="color:#3b95e1">/home></span>
+            <span style="color:#1875d2">nav
+                <a class="glow"  href="/projects">projects</a> -
+                <a class="glow" href="/about">about</a> -
+                <a class="glow" href="/contact">contact</a></span>
+        </header>
+    </div>
 
-    <canvas id="bg"></canvas>   
-    <div class="hide3d"></div>
-    <main>
+    <!-- cool lookin ascii -->
+    <div class="asciiWrap">
+        <div class="ascii"><pre class="asciiTxt">
+    <diffcol>.-------------------------------------.</diffcol>
+    <diffcol>|</diffcol>   ______                   _        <diffcol>|</diffcol>
+    <diffcol>|</diffcol>  / _____)                 (_)       <diffcol>|</diffcol>
+    <diffcol>|</diffcol> ( (____   ____ _   _ _____ _  ____  <diffcol>|</diffcol>
+    <diffcol>|</diffcol>  \____ \ / _  | | | (____ | |/ ___) <diffcol>|</diffcol>
+    <diffcol>|</diffcol>  _____) ) |_| | |_| / ___ | | |_    <diffcol>|</diffcol>
+    <diffcol>|</diffcol> (______/ \__  |____/\_____|_|_(_)   <diffcol>|</diffcol>
+    <diffcol>|</diffcol>             |_|                     <diffcol>|</diffcol>
+    <diffcol>'-------------------------------------'</diffcol></pre>
+            
+        </div>
+        <div class="subAscii ascii">
+            <p>Certified Computer Nerd</p>
+            <span style="color:#72cce4; text-shadow: 0 0 3px #1875d2;">{ 
+                <a href="/about" class="glowSub">Who am I?</a> }
+            </span>
+            <span style="color:#72cce4; text-shadow: 0 0 3px #1875d2;">{ 
+                <a href="/projects" class="glowSub">My projects</a> }
+            </span>
+            <span style="color:#72cce4; text-shadow: 0 0 3px #1875d2;">{ 
+                <a href="https://squair.is-a.dev/beta" class="glowSub">Beta Games</a> }
+            </span>
+            <span style="color:#72cce4; text-shadow: 0 0 3px #1875d2;">{ 
+                <a href="/about" class="glowSub">Contact me</a> }
+            </span>
+        </div>
+        
+    </div>
+    <footer class="foot">
+        <span>All Rights Reserved, SquairCode 2025 </span><span id="tag" style="color: #72cce4"></span>
+    </footer>
+    </div>
 
-      <header>
-        <h1>Squair</h1>
-        <p>Welcome to my little dev portfolio.</p>
-        <p><a href="https://squairdev.github.io/beta/GloShooters/">GloShooters </a>  |  <a href="https://squairdev.github.io/beta/ArmedHorizons/"> ArmedHorizons</a></p>
-      </header>
-
-
-      <blockquote>
-        <p>I make games with Unity WebGL, and three.js.</p>
-      </blockquote>
-
-      <section class="light">
-        <h2>Projects</h2>
-
-        <p>
-          squairdev.github.io - This github website is all about exploring the three.js library, and posting updates about my coding journey. Started in late October, 2024, squairdev.github.io is a website to show all of my previous and ongoing projects using WebGL in Unity, and three.js. I hope to improve and keep this project going, as I learn more from the three.js library, and WebGL.
-        </p>
-        <p>
-          GloShooters - Started in September 2024, GloShooters is a WebGL 2D project. The game was based off the old game "Asteroid", and a Game Jam entry. Overall, I spent 4-8 hours working on the game. In the game, you have to move around the map and shoot enemies, which follow you as you get close to them. You have limited ammo, but enemies drop some as you shoot them. You can use spare bullets in the shop. The scoring system is finally fixed (thank god, one bug down, a lot more to go). Across the whole map, there is some secrets. Go find em out for yourself! <a href="https://squairdev.github.io/beta/GloShooters/">(Visit GloShooters)</a>
-        </p>
-        <p>
-          ArmedHorizons - Started in October 2024, ArmedHorizons is a multiplayer Unity WebGL game. The game features a username system, shooting, running, and all of the basic first person shooter (FPS) components. When you load the website, you will be greeted by the lobby screen, where you can select a username, then hop in. You will join a lobby of up to 6 other players, in a free for all (FFA) lobby. You can shoot the enemy to deal damage, or duck behind obstacles to plan. Visit the website at: <a href="https://squairdev.github.io/beta/ArmedHorizons/">ArmedHorizons</a>.
-        </p>
-
-        <h2>Checkpoints</h2>
-
-        <p>
-          Like many others, I went to a coding school/camp. At this week long course, I learnt all the basic functions of python; loops, functions, etc. Going to this camp jump-started my coding journey. Shortly after I taught myself HTML, CSS, C#, JavaScript, more python, and now learning three.js, and hope to continue to do so. Learning how to code inspired me to start many projects (like other coders, you never finish a project once you start it.) such as GloShooters, Sph3re Slide, and ArmedHorizons. Going forward, I would like to continue to work on WebGL games using three.js, and Unity.
-        </p>
-
-      </section>
-
-      <blockquote>
-        <p>75 Years. That's all you get. Use it wisely. <br><br>-Squair, 2024</p>
-      </blockquote>
-
-      <blockquote>
-        <p>Thanks for reading, have a wonderful day.</p>
-      </blockquote>
-
-
-    </main>
-    
-    <script type="module" src="./main.js"></script>
-
-
-
-
-
+    <script>
+        function rand(){
+        if(window.isMobile()){
+            alert('this website displays best on desktop, but it still works on mobile.')
+        }
+    const emojis = [":D", ":P", ":3", ":O", "XP"];
+    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+    document.getElementById("tag").textContent = randomEmoji;
+}window.isMobile = function(){
+  if(window.matchMedia("(any-hover:none)").matches) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 
-
-
-
-
-
-
-
-
-
-
-  </body>
+    </script>
+</body>
 </html>

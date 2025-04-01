@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css">
+    <title>Squair Dev | Contact</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
+</head>
+<body onload="rand()">
+    <!--wow ascii art
+    .-------------------------------------.
+    |   ______                   _        |
+    |  / _____)                 (_)       |
+    | ( (____   ____ _   _ _____ _  ____  |
+    |  \____ \ / _  | | | (____ | |/ ___) |
+    |  _____) ) |_| | |_| / ___ | | |_    |
+    | (______/ \__  |____/\_____|_|_(_)   |
+    |             |_|                     |
+    '-------------------------------------'
+    -->
+    <!-- wow navbar -->
+    <div class="header">
+        <header class="typewriter" style="color: #142b61">C:<span style="color:#14528b">/Squair</span><span style="color:#3b95e1">/home></span>
+            <span style="color:#1875d2">nav
+                <a class="glow"  href="/">home</a> -
+                <a class="glow" href="/projects">projects</a> -
+                <a class="glow" href="/about">about</a></span>
+        </header>
+    </div>
+
+    <!-- cool lookin ascii -->
+    <div class="asciiWrap">
+        
+        <div class="subAscii ascii">
+            <p>Contact me</p>
+            <span class="box"><a href="mailto:squairyt@gmail.com" target="_blank" style="text-shadow: 0 0 5px #72cce4;">[Email]</a> squairyt@gmail.com</span>
+            <span class="box"><a href="https://github.com/squairdev" target="_blank" style="text-shadow: 0 0 5px #72cce4;">[Github]</a> @squairdev</span>
+            <span class="box"><a href="https://discordapp.com/users/1176703746709934161" target="_blank" style="text-shadow: 0 0 5px #72cce4;">[Discord]</a> squair.dev</span>
+
+        </div>
+        
+    </div>
+    <footer class="foot">
+        <span>All Rights Reserved, SquairCode 2025 </span><span id="tag" style="color: #72cce4"></span>
+    </footer>
+    </div>
+
+    <script>
+        function rand(){
+    const emojis = [":D", ":P", ":3", ":O", "XP"];
+    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+    document.getElementById("tag").textContent = randomEmoji;
+}
+    </script>
+</body>
+</html>
