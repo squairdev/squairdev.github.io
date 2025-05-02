@@ -3,7 +3,7 @@ html{
     background-color: rgb(25, 28, 36);
     font-family: Hack, monospace;
     color: white;
-    overflow:hidden;
+    overflow-x: hidden;
     position: relative
 }
 span, header{
