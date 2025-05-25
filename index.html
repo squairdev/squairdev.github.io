@@ -1,14 +1,5 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css">
-    <title>Squair Dev | Home</title>
-    <link rel="icon" type="image/x-icon" href="favicon.png">
-</head>
-<body onload="rand()">
-    <!--wow ascii art
+<!DOCTYPE html>
+<!--wow ascii art
     .-------------------------------------.
     |   ______                   _        |
     |  / _____)                 (_)       |
@@ -19,69 +10,72 @@
     |             |_|                     |
     '-------------------------------------'
     -->
-    <!-- wow navbar -->
-    <div class="header">
-        <header class="typewriter" style="color: #142b61">C:<span style="color:#14528b">/Squair</span><span style="color:#3b95e1">/home></span>
-            <span style="color:#1875d2">nav
-                <a class="glow"  href="/projects">projects</a> -
-                <a class="glow" href="/about">about</a> -
-                <a class="glow" href="/contact">contact</a></span>
-        </header>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Squair.</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <meta content="Squair." property="og:title">
+  <meta content="Links to my projects." property="og:description">
+  <meta content="https://squair.is-a.dev/" property="og:url">
+  <meta content="https://squair.is-a.dev/favicon.png" property="og:image">
+  <meta content="#1875d2" data-react-helmet="true" name="theme-color">
+</head>
+<body>
+  <div class="terminal">
+    <h1 id="typewriter"></h1>
+    <div class="links">
+      <a href="https://github.com/squairdev" target="_blank">GitHub</a>
+      <a href="projects/">Projects</a>
+      <a href="https://discord.gg/paWsGeX2UM" target="_blank">Discord Server</a>
+      <a href="contact/">Contact</a>
     </div>
+    <div class="cat-section">
+  <div class="cat-text">
+    <p>Here's a random picture of my cat:</p>
+  </div>
+  <div class="cat-img">
+    <img id="catImage" src="" alt="Random cat" />
+  </div>
+</div>
+</div>
+  <div class="footer">
+    <span>© SquairCode, 2025. All Rights Reserved. </span> <span id="tag" style="color: #72cce4"></span>
+  </div>
+  <script>
+    const titleText = "C:/Squair>";
+    const speed = 80;
+    let i = 0;
 
-    <!-- cool lookin ascii -->
-    <div class="asciiWrap">
-        <div class="ascii"><pre class="asciiTxt">
-    <diffcol>.-------------------------------------.</diffcol>
-    <diffcol>|</diffcol>   ______                   _        <diffcol>|</diffcol>
-    <diffcol>|</diffcol>  / _____)                 (_)       <diffcol>|</diffcol>
-    <diffcol>|</diffcol> ( (____   ____ _   _ _____ _  ____  <diffcol>|</diffcol>
-    <diffcol>|</diffcol>  \____ \ / _  | | | (____ | |/ ___) <diffcol>|</diffcol>
-    <diffcol>|</diffcol>  _____) ) |_| | |_| / ___ | | |_    <diffcol>|</diffcol>
-    <diffcol>|</diffcol> (______/ \__  |____/\_____|_|_(_)   <diffcol>|</diffcol>
-    <diffcol>|</diffcol>             |_|                     <diffcol>|</diffcol>
-    <diffcol>'-------------------------------------'</diffcol></pre>
-            
-        </div>
-        <div class="subAscii ascii">
-            <p>Certified Computer Nerd</p>
-            <span style="color:#72cce4; text-shadow: 0 0 3px #1875d2;">{ 
-                <a href="/about" class="glowSub">Who am I?</a> }
-            </span>
-            <span style="color:#72cce4; text-shadow: 0 0 3px #1875d2;">{ 
-                <a href="/projects" class="glowSub">My projects</a> }
-            </span>
-            <span style="color:#72cce4; text-shadow: 0 0 3px #1875d2;">{ 
-                <a href="/beta" class="glowSub">Beta Games</a> }
-            </span>
-            <span style="color:#72cce4; text-shadow: 0 0 3px #1875d2;">{ 
-                <a href="/contact" class="glowSub">Contact me</a> }
-            </span>
-        </div>
-        
-    </div>
-    <footer class="foot">
-        <span>All Rights Reserved, SquairCode 2025 </span><span id="tag" style="color: #72cce4"></span>
-    </footer>
-    </div>
+    function typeWriter() {
+      if (i < titleText.length) {
+        document.getElementById("typewriter").innerHTML = titleText.substring(0, i + 1);
+        i++;
+        setTimeout(typeWriter, speed);
+      } else {
+        document.getElementById("typewriter").innerHTML = titleText + '<span class="cursor">_</span>';
+      }
+      const emojis = [":D", ":P", ":3", ":3", ":3", ":3", ":O", "XP", ":|"];
+      const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+      document.getElementById("tag").textContent = randomEmoji;
+      const imageCount = 10; // change to the actual number of cat images
+      const randomIndex = Math.floor(Math.random() * imageCount) + 1;
+      const imgPath = `images/cat/cat${randomIndex}.JPEG`; // assumes files like cat1.jpg, cat2.jpg, etc.
 
-    <script>
-        function rand(){
-        if(window.isMobile()){
-            alert('this website displays best on desktop, but it still works on mobile.')
-        }
-    const emojis = [":D", ":P", ":3", ":O", "XP"];
-    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-    document.getElementById("tag").textContent = randomEmoji;
-}window.isMobile = function(){
-  if(window.matchMedia("(any-hover:none)").matches) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-
-    </script>
+      const imgElement = document.getElementById('catImage');
+      if (imgElement) {
+        imgElement.src = imgPath;
+      } else {
+        console.error("Image element with ID 'catImage' not found.");
+      }
+    }
+    window.onload = typeWriter;
+    
+    
+    
+    
+  </script>
 </body>
 </html>

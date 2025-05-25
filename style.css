@@ -1,109 +1,142 @@
-pre, code { font-family: Hack, monospace; }
-html{
-    background-color: rgb(25, 28, 36);
-    font-family: Hack, monospace;
-    color: white;
-    overflow-x: hidden;
-    position: relative
-}
-span, header{
-    font-size:1.5vh;
-}a{
-    color: #72cce4;
-    cursor:pointer;
-    text-decoration: none;
-}
-.header{display: inline-block;}
-.typewriter{
-
-  width:100%;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 10px solid;
-  animation: 
-    typing 2s steps(35), 
-    cursor .9s ease-in-out infinite alternate;
-}
-@keyframes cursor {
-  0%{border-color: #1875d2;}
-  50%{border-color: transparent;}
-  100%{border-color: #1875d2;}
-}@keyframes typing {
-  from {width: 0}
+:root {
+  --bg: #191c24;
+  --primary: #142b61;
+  --accent1: #14528b;
+  --accent2: #1875d2;
+  --accent3: #3b95e1;
+  --text: #3b95e1;
 }
 
-.glow{
-  text-shadow: 0 0 5px #72cce4;
-  transition-duration: 0.5s;
-}.glow:hover{
-  text-shadow: 0 0 15px #72cce4,0 0 5px #72cce4;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
 }
 
-.ascii{
-  color:#72cce4;
-  vertical-align: middle;
-  text-shadow: 0 0 10px #72cce4,0 0 5px #72cce4;
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.terminal {
+  background-color: var(--primary);
+  border: 2px solid var(--accent1);
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 800px;
+  width: 100%;
   text-align: center;
-}diffcol{
-  color:#1875d2;
-  text-shadow: 0 0 10px #1875d2;
+  box-shadow: 0 0 20px var(--accent2);
 }
-.ascii{display: grid; place-items: center;}
-.asciiTxt{
-  margin: auto 0;
-  transform: translateX(-0.5%);
-  width:100%;
+
+
+#typewriter {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: var(--accent3);
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 0.8s step-start infinite;
+  color: var(--accent3);
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Link Buttons on Main Page */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.links a {
+  background-color: var(--accent1);
+  color: var(--text);
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+  border: 1px solid var(--accent2);
+}
+
+.links a:hover {
+  background-color: var(--accent2);
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.project-box {
+  background-color: var(--primary);
+  border: 1px solid var(--accent1);
+  border-radius: 8px;
   overflow: hidden;
-  animation: 
-    typing 3s steps(50) 
-}
-@keyframes typing {
-  from {width: 0}
-}.asciiWrap{
-  width:100%;
-  margin: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
+  box-shadow: 0 0 8px var(--accent2);
+  transition: transform 0.3s;
 }
 
-.subAscii{
+.project-box:hover {
+  transform: scale(1.03);
+}
+
+.project-box img {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  object-fit: contain;
+  margin: 15px auto 5px;
+  display: block;
+}
+
+.project-description {
+  padding: 10px;
+  color: var(--text);
+  font-size: 0.95rem;
   text-align: center;
-  transform: translateX(0.5%);
-}.glowSub{
-  color: #1875d2;
-  text-shadow: none;
-  transition-duration: 0.3s;
-  line-height: 150%;
-}.glowSub:hover{
-  text-shadow:0 0 5px #72cce4;
-  text-shadow:0 0 10px #72cce4;
+}
+.footer {
+   position:fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: white;
+   text-align: center;
+}
+.cat-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
 }
 
-p, a, span, header,pre{
-  font-size: 1.2rem;
+.cat-text {
+  flex: 1;
+  min-width: 150px;
+  color: var(--text);
+  font-size: 1.1rem;
 }
 
-footer {
-  
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  text-align: center;
-  height: 1.2rem;
-  padding: 0.5rem 0;
-  color: #1875d2;
-  text-shadow:0 0 10px #1875d2;
-}footer>span{
-  font-size: 16px;
-}
-
-.box{
-  width: 25%;
-  overflow: hidden;
-  color:#1875d2;
-  text-shadow: none;
+.cat-img img {
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 8px;
 }

@@ -1,14 +1,5 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css">
-    <title>Squair Dev | Projects</title>
-    <link rel="icon" type="image/x-icon" href="../favicon.png">
-</head>
-<body onload="rand()">
-    <!--wow ascii art
+<!DOCTYPE html>
+<!--wow ascii art
     .-------------------------------------.
     |   ______                   _        |
     |  / _____)                 (_)       |
@@ -19,43 +10,88 @@
     |             |_|                     |
     '-------------------------------------'
     -->
-    <!-- wow navbar -->
-    <div class="header">
-        <header class="typewriter" style="color: #142b61">C:<span style="color:#14528b">/Squair</span><span style="color:#3b95e1">/home></span>
-            <span style="color:#1875d2">nav
-                <a class="glow"  href="/">home</a> -
-                <a class="glow" href="/about">about</a> -
-                <a class="glow" href="/contact">contact</a></span>
-        </header>
-    </div>
-
-    <!-- cool lookin ascii -->
-    <div class="asciiWrap">
-        
-        <div class="subAscii ascii">
-            <p><a href="https://squair.is-a.dev">squair.is-a.dev</a></p>
-            <span class="box">A Portfolio about me, and my projects. I focus on cool visuals, like some typewriter effects, glowing, etc. while having info about my coding journey.</span>
-            <br><p><a href="/nugget-docs">Nugget Helper</a></p>
-            <span class="box">A simple guide on how to use the nugget iOS customization tool. Fix errors, and bugs with Nugget, and search for availability.</span>
-            <br><p><a href="/GloShooters">GloShooters</a></p>
-            <span class="box">A 2D Unity WebGL game based off of a Game Jam entry, and the retro game 'Astroid'. Fly around and shoot enemies, buy powerups from the shop, and get the highest score.</span>
-            <br><p><a href="#notAvalibleYet" onclick="alert('Not Avalible Yet.')">GrappleSlide</a></p>
-            <span class="box">A 3D Unity WebGL game, based off a archived project of mine. I wanted to remake this game, with more knowledge on game development. Swing around with your grapple gun, dodge obstacles. Coming in 2025!</span>
-            
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Squair > projects.</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+  <meta content="Squair > projects." property="og:title">
+  <meta content="Links to my projects." property="og:description">
+  <meta content="https://squair.is-a.dev/projects" property="og:url">
+  <meta content="https://squair.is-a.dev/favicon.png" property="og:image">
+  <meta content="#1875d2" data-react-helmet="true" name="theme-color">
+</head>
+<body>
+  <div class="terminal">
+    <h1 id="typewriter"></h1>
+    <div class="projects-grid">
+      <div class="project-box">
+        <img src="images/NuggetHelperLogo.png" alt="Nugget Helper Logo">
+        <div class="project-description">
+          <strong>Nugget Helper</strong><br>
+          A simple guide on how to setup, use, get custom made wallpapers, and fix errors with Nugget, a iOS customization tool.
+          <div class="links">
+            <a href="https://squair.is-a.dev/nugget-docs" target="_blank">Go</a>
+          </div>
         </div>
-        
+      </div>
+      <div class="project-box">
+        <img src="https://cdn.discordapp.com/app-icons/1373689028678914079/1267687c16daf1ce4ec89fb25a8ec796.png" alt="CIA logo">
+        <div class="project-description">
+          <strong>CIA (Crazy Interesting Answers)</strong><br>
+          A utility discord bot that lets you add stickies to channels, use tags, levels, and send cat pictures.<br><br><br>Not available to be added.
+        </div>
+      </div>
+      <div class="project-box">
+        <img src="https://cdn.discordapp.com/app-icons/1363300693661974548/3d06d5881b81cce98fff90e9c19e7748.png" alt="NSA logo">
+        <div class="project-description">
+          <strong>NSA (Non Serious Answers)</strong><br>
+          A mean bot that insults you for running any of its fun but usless commands.
+          <div class="links">
+            <a href="https://discord.gg/paWsGeX2UM" target="_blank">Add Bot</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-box">
+        <img src="https://cdn.discordapp.com/icons/1373399813474746418/c2d35d7796c0a51987071a8081b7ec8b.webp?size=80&quality=lossless" alt="Glixed++ logo">
+        <div class="project-description">
+          <strong>Glixed++</strong><br>
+          A discord server for my community. Talk, send pictures, and interact with my bots.
+          <div class="links">
+            <a href="https://discord.com/oauth2/authorize?client_id=1363300693661974548" target="_blank">Join Server</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <footer class="foot">
-        <span>All Rights Reserved, SquairCode 2025 </span><span id="tag" style="color: #72cce4"></span>
-    </footer>
-    </div>
+  </div>
+  <div class="footer">
+    <span>© SquairCode, 2025. All Rights Reserved. </span> <span id="tag" style="color: #72cce4"></span>
+  </div>
+  <script>
+  const basePath = `<a href="/" style="color: #1875d2; text-shadow: 0 0 1.5px #14528b; text-decoration: none;">C:/Squair/</a>`;
+  const pagePath = "projects>";
+  const fullTitle = basePath + pagePath;
+  const speed = 80;
+  let i = 0;
 
-    <script>
-        function rand(){
-    const emojis = [":D", ":P", ":3", ":O", "XP"];
+  function typeWriter() {
+    const target = document.getElementById("typewriter");
+    if (i < pagePath.length) {
+      target.innerHTML = basePath + pagePath.substring(0, i + 1);
+      i++;
+      setTimeout(typeWriter, speed);
+    } else {
+      target.innerHTML = basePath + pagePath + '<span class="cursor">_</span>';
+    }
+    const emojis = [":D", ":P", ":3", ":3", ":3", ":3", ":O", "XP", ":|"];
     const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
     document.getElementById("tag").textContent = randomEmoji;
-}
-    </script>
+  }
+
+  window.onload = typeWriter;
+</script>
+
 </body>
 </html>

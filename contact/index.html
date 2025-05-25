@@ -1,14 +1,5 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css">
-    <title>Squair Dev | Contact</title>
-    <link rel="icon" type="image/x-icon" href="../favicon.png">
-</head>
-<body onload="rand()">
-    <!--wow ascii art
+<!DOCTYPE html>
+<!--wow ascii art
     .-------------------------------------.
     |   ______                   _        |
     |  / _____)                 (_)       |
@@ -19,39 +10,55 @@
     |             |_|                     |
     '-------------------------------------'
     -->
-    <!-- wow navbar -->
-    <div class="header">
-        <header class="typewriter" style="color: #142b61">C:<span style="color:#14528b">/Squair</span><span style="color:#3b95e1">/home></span>
-            <span style="color:#1875d2">nav
-                <a class="glow"  href="/">home</a> -
-                <a class="glow" href="/projects">projects</a> -
-                <a class="glow" href="/about">about</a></span>
-        </header>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Squair > contact.</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+  <meta content="Squair > contact." property="og:title">
+  <meta content="My contact information." property="og:description">
+  <meta content="https://squair.is-a.dev/contact" property="og:url">
+  <meta content="https://squair.is-a.dev/favicon.png" property="og:image">
+  <meta content="#1875d2" data-react-helmet="true" name="theme-color">
+</head>
+<body>
+  <div class="terminal">
+    <h1 id="typewriter"></h1>
+    <div class="links">
+      <a href="https://github.com/squairdev" target="_blank">GitHub</a>
+      <a href="https://discordapp.com/users/1176703746709934161">Discord</a>
+      <a href="mailto:squairyt@gmail.com">Email</a>
     </div>
+  </div>
+  <div>
+  <div class="footer">
+    <span>© SquairCode, 2025. All Rights Reserved. </span> <span id="tag" style="color: #72cce4"></span>
+  </div>
+  <script>
+  const basePath = `<a href="/" style="color: #1875d2; text-shadow: 0 0 1.5px #14528b; text-decoration: none;">C:/Squair/</a>`;
+  const pagePath = "contact>";
+  const fullTitle = basePath + pagePath;
+  const speed = 80;
+  let i = 0;
 
-    <!-- cool lookin ascii -->
-    <div class="asciiWrap">
-        
-        <div class="subAscii ascii">
-            <p>Contact me</p>
-            <span class="box"><a href="mailto:squairyt@gmail.com" target="_blank" style="text-shadow: 0 0 5px #72cce4;">[Email]</a> squairyt@gmail.com</span>
-            <span class="box"><a href="https://github.com/squairdev" target="_blank" style="text-shadow: 0 0 5px #72cce4;">[Github]</a> @squairdev</span>
-            <span class="box"><a href="https://discordapp.com/users/1176703746709934161" target="_blank" style="text-shadow: 0 0 5px #72cce4;">[Discord]</a> squair.dev</span>
-
-        </div>
-        
-    </div>
-    <footer class="foot">
-        <span>All Rights Reserved, SquairCode 2025 </span><span id="tag" style="color: #72cce4"></span>
-    </footer>
-    </div>
-
-    <script>
-        function rand(){
-    const emojis = [":D", ":P", ":3", ":O", "XP"];
+  function typeWriter() {
+    const target = document.getElementById("typewriter");
+    if (i < pagePath.length) {
+      target.innerHTML = basePath + pagePath.substring(0, i + 1);
+      i++;
+      setTimeout(typeWriter, speed);
+    } else {
+      target.innerHTML = basePath + pagePath + '<span class="cursor">_</span>';
+    }
+    const emojis = [":D", ":P", ":3", ":3", ":3", ":3", ":O", "XP", ":|"];
     const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
     document.getElementById("tag").textContent = randomEmoji;
-}
-    </script>
+  }
+
+  window.onload = typeWriter;
+</script>
+
 </body>
 </html>
