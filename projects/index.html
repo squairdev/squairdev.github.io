@@ -55,12 +55,12 @@
         </div>
       </div>
       <div class="project-box">
-        <img src="https://cdn.discordapp.com/icons/1373399813474746418/c2d35d7796c0a51987071a8081b7ec8b.webp?size=80&quality=lossless" alt="Glixed++ logo">
+        <img src="https://squair.is-a.dev/pocketposter/images/PocketPoster.png" alt="Pocket Poster logo">
         <div class="project-description">
-          <strong>Glixed++</strong><br>
-          A discord server for my community. Talk, send pictures, and interact with my bots.
+          <strong>Pocket Poster Tutorial</strong><br>
+          An easy guide on how to install Pocket Poster on your iOS or iPadOS device.
           <div class="links">
-            <a href="https://discord.gg/paWsGeX2UM" target="_blank">Join Server</a>
+            <a href="https://squair.is-a.dev/pocketposter/" target="_blank">Go</a>
           </div>
         </div>
       </div>
@@ -92,6 +92,29 @@
 
   window.onload = typeWriter;
 </script>
+<div id="line-background"></div>
+<script>
+    const container = document.getElementById('line-background');
+
+    function createLine() {
+      const line = document.createElement('div');
+      line.classList.add('line');
+
+      const y = Math.random() * window.innerHeight;
+      const width = 100 + Math.random() * 400;
+      const duration = 2 + Math.random() * 3;
+
+      line.style.top = `${y}px`;
+      line.style.width = `${width}px`;
+      line.style.animationDuration = `${duration}s`;
+
+      container.appendChild(line);
+
+      setTimeout(() => line.remove(), duration * 1000);
+    }
+
+    setInterval(createLine, 150);
+  </script>
 
 </body>
 </html>

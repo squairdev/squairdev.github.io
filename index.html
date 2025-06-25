@@ -72,10 +72,29 @@
       }
     }
     window.onload = typeWriter;
-    
-    
-    
-    
+  </script>
+  <div id="line-background"></div>
+<script>
+    const container = document.getElementById('line-background');
+
+    function createLine() {
+      const line = document.createElement('div');
+      line.classList.add('line');
+
+      const y = Math.random() * window.innerHeight;
+      const width = 100 + Math.random() * 400;
+      const duration = 3 + Math.random() * 3;
+
+      line.style.top = `${y}px`;
+      line.style.width = `${width}px`;
+      line.style.animationDuration = `${duration}s`;
+
+      container.appendChild(line);
+
+      setTimeout(() => line.remove(), duration * 1000);
+    }
+
+    setInterval(createLine, 150);
   </script>
 </body>
 </html>
