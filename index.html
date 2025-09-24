@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--MADE BY Squair. Github: https://github.com/squairdev -->
 <!--wow ascii art
     .-------------------------------------.
     |   ______                   _        |
@@ -12,89 +13,371 @@
     -->
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Squair.</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="favicon.png">
-  <meta content="Squair." property="og:title">
-  <meta content="Links to my projects." property="og:description">
-  <meta content="https://squair.is-a.dev/" property="og:url">
-  <meta content="https://squair.is-a.dev/favicon.png" property="og:image">
-  <meta content="#1875d2" data-react-helmet="true" name="theme-color">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="title">C:/squair.xyz></title>
+    <link rel="icon" type="image/x-icon" href="https://squair.xyz/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;&amp;display=swap" rel="stylesheet">
+    <meta content="squair.xyz" property="og:title">
+    <meta content="My portfolio. Projects, Blogs, Contact info." property="og:description">
+    <meta content="https://squair.xyz/" property="og:url">
+    <meta content="https://squair.xyz/favicon.png" property="og:image">
+    <meta content="#2b7fff" name="theme-color">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: "SF Pro Display", sans-serif; 
+            background-color: #0f0f0f;
+        }
+
+        html {
+            overflow: hidden;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        .horizontal-container {
+            display: flex;
+            width: 400vw; 
+            height: 100vh;
+        }
+
+        .section {
+            width: 100vw;
+            height: 100vh;
+            flex-shrink: 0; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 15, 15, 0.9);
+            backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #00ff9f;
+            font-family: monospace;
+            font-size: 2rem;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+        #overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        #overlay.ready {
+            cursor: pointer;
+        }
+        #subtext {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: #ffffff;
+        }
+        .subtext-hidden {
+            display: none;
+        }
+        .footer {
+            position:fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+        }
+    </style>
 </head>
-<body>
-  <div class="terminal">
-    <h1 id="typewriter"></h1>
-    <div class="links">
-      <a href="https://github.com/squairdev" target="_blank">GitHub</a>
-      <a href="projects/">Projects</a>
-      <a href="https://discord.gg/paWsGeX2UM" target="_blank">Discord Server</a>
-      <a href="contact/">Contact</a>
+<body class="bg-gray-900 text-white">
+    
+    <div id="overlay">
+        <span id="typed" class="text-blue-400"></span>
+        <div id="subtext" class="subtext-hidden">[Click to enter]</div>
     </div>
-    <div class="cat-section">
-  <div class="cat-text">
-    <p>Here's a random picture of my cat:</p>
-  </div>
-  <div class="cat-img">
-    <img id="catImage" src="" alt="Random cat" />
-  </div>
-</div>
-</div>
-  <div class="footer">
-    <span>© SquairCode, 2025. All Rights Reserved. </span> <span id="tag" style="color: #72cce4"></span>
-  </div>
-  <script>
-    const titleText = "C:/Squair>";
-    const speed = 80;
-    let i = 0;
 
-    function typeWriter() {
-      if (i < titleText.length) {
-        document.getElementById("typewriter").innerHTML = titleText.substring(0, i + 1);
-        i++;
-        setTimeout(typeWriter, speed);
-      } else {
-        document.getElementById("typewriter").innerHTML = titleText + '<span class="cursor">_</span>';
+    <nav class="fixed top-0 left-0 w-full bg-gray-900/80 backdrop-blur-sm z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-center items-center h-16">
+                <div class="flex items-center space-x-0">
+                    <a href="#home" class="text-gray-300 hover:text-blue-400 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="#projects" class="text-gray-300 hover:text-blue-400 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                    <a href="#blogs" class="text-gray-300 hover:text-blue-400 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">Blogs</a>
+                    <a href="#contact" class="text-gray-300 hover:text-blue-400 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    <a href="#wallpapers" class="text-gray-300 hover:text-blue-400 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">Wallpapers</a>
+                    <a href="#extra" class="text-gray-300 hover:text-blue-400 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">Extra</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="horizontal-container">
+        
+        <section id="home" class="section text-center">
+            <div class="max-w-2xl">
+                <h1 class="text-5xl md:text-7xl font-bold text-blue-400 mb-4">Hey, I'm <span id="name">Squair.</span></h1>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                    I'm a developer focused on helping others. You might know me from the 
+                    <a href="https://discord.gg/cowabunga" target="_blank" class="text-blue-400 hover:underline">Cowabunga Discord</a> or for making 
+                    <a href="/pocketposter" target="_blank" class="text-blue-400 hover:underline">/pocketposter</a>.
+                </p><br>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                    I'm interested in the Apple ecosystem, PCs, servers, or really anything tech related.
+                </p><br>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-2xl font-bold mb-2 text-white">15+ projects created</h3>
+                  </div>
+                  <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-2xl font-bold mb-2 text-white">4 projects finished</h3>
+                  </div>
+                  <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-2xl font-bold mb-2 text-white">100s of headaches</h3>
+                  </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+             <div class="w-full max-w-5xl text-center">
+                <h2 class="text-4xl font-bold mb-8 text-blue-400">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Nugget Helper</h3>
+                        <p class="text-gray-400">A simple guide on how to setup and configure Nugget, a iOS customization tool.</p><br>
+                        <a href="/nuggethelper" target="_blank" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300">Go</a>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Pocket Poster Tutorial</h3>
+                        <p class="text-gray-400">Another simple guide on how to sideload and use Pocket Poster, a wallpaper tool.</p><br>
+                        <a href="/pocketposter" target="_blank" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300">Go</a>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold mb-2 text-white">squair.xyz</h3>
+                        <p class="text-gray-400">My portfolio, now with a new design and domain. Explore blogs, projects, and my wallpapers.</p><br>
+                        <a href="https://squair.xyz/" target="_blank" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300">Go</a>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <section id="blogs" class="section">
+            <div class="w-full max-w-5xl text-center">
+                <h2 class="text-4xl font-bold mb-8 text-blue-400">Blog Posts</h2>
+                <div class="space-y-8">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-left">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Wow cool new design thing</h3>
+                        <p class="text-gray-400 mb-4">Published on July 17, 2025</p>
+                        <p class="text-gray-300">I finally bought a domain from <a href="https://porkbun.com/" class="text-blue-300">porkbun</a> for a whole $1.46 CAD. Expensive, right?<br><br>
+                         Along with the new domain, I redesigned my portfolio with tailwindcss and a pinch of salt. The previous design was lacking some features that I wanted to add, like a horizontal layout, projects tab, my wallpapers tab, and [click to enter] on load.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section text-center">
+            <div class="max-w-lg">
+                <h2 class="text-4xl font-bold mb-4 text-blue-400">Contact Me</h2>
+                <p class="text-lg text-gray-300 mb-6">
+                    Questions, or need to get a hold of me? Contact me.
+                </p>
+                <div class="flex justify-center items-center space-x-6">
+                    <a href="mailto:squairyt@gmail.com" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                        Email
+                    </a>
+                    <a href="https://github.com/squairdev" target="_blank" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                        GitHub
+                    </a>
+                    <a href="https://discord.com/users/1039340580012036106" target="_blank" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                        Discord
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="wallpapers" class="section text-center">
+          <div class="w-full max-w-5xl text-center">
+            <h2 class="text-4xl font-bold mb-8 text-blue-400">My Custom Wallpapers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Niko OneShot</h3>
+                        <img src="https://github.com/SerStars/nugget-wallpapers/blob/main/previews/custom/gifs/ScreenRecording_07-16-2025_16-44-49_1.gif?raw=true" class="rounded-lg"/>
+                        <p class="text-gray-400">Niko from OneShot</p><br>
+                        <a href="https://github.com/SerStars/nugget-wallpapers/raw/refs/heads/main/wallpapers/custom/niko.tendies" target="_blank" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300">Download .tendies</a>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Solar System</h3>
+                        <img src="https://github.com/squairdev/nugget-docs/raw/refs/heads/main/wallpapers/downloads/solar.gif" class="rounded-lg"/>
+                        <p class="text-gray-400">Sun, Earth, Moon.</p><br>
+                        <a href="https://raw.githubusercontent.com/squairdev/nugget-docs/refs/heads/main/wallpapers/downloads/solarOLED.tendies" target="_blank" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300">Download</a>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Photo Gallery (tendies)</h3>
+                        <img src="https://squair.xyz/images/ScreenRecording_07-02-2025_12-27-24_1.gif" class="rounded-lg"/>
+                        <p class="text-gray-400">5 images scrolling. Requires steps.</p><br>
+                        <a href="https://squair.xyz/images/PhotoGallery.tendies" target="_blank" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300">Download</a>
+                    </div>
+                </div>
+          </div>
+        </section>
+        <section id="extra" class="section text-center">
+          <div class="w-half max-w-5xl text-center">
+            <h2 class="text-4xl font-bold mb-8 text-blue-400">Extra Media</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8">
+                    <a href="/setup" class="bg-blue-600 text-white font-bold p-6 rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                        My setup
+                    </a>
+            </div>
+          </div>
+        </section>
+
+    </main>
+    <div class="footer">
+    <span>© SquairCode, 2025. All Rights Reserved. </span> <span id="tag" style="color: #72cce4">:O</span>
+  </div>
+
+    <script>
+      const speed = 80;
+      let l = 0;
+
+      function typeWriter() {
+        const target = document.getElementById("typewriter");
+        if (l < 8) {
+          l++;
+          setTimeout(typeWriter, speed);
+        }
+        const emojis = [":D", ":P", ":3", ":3", ":O", "XP", ":|"];
+        const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+        document.getElementById("tag").textContent = randomEmoji;
       }
-      const emojis = [":D", ":P", ":3", ":3", ":3", ":3", ":O", "XP", ":|"];
-      const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-      document.getElementById("tag").textContent = randomEmoji;
-      const imageCount = 10; // change to the actual number of cat images
-      const randomIndex = Math.floor(Math.random() * imageCount) + 1;
-      const imgPath = `images/cat/cat${randomIndex}.JPEG`; // assumes files like cat1.jpg, cat2.jpg, etc.
 
-      const imgElement = document.getElementById('catImage');
-      if (imgElement) {
-        imgElement.src = imgPath;
-      } else {
-        console.error("Image element with ID 'catImage' not found.");
-      }
-    }
-    window.onload = typeWriter;
-  </script>
-  <div id="line-background"></div>
-<script>
-    const container = document.getElementById('line-background');
+  window.onload = typeWriter;
+    </script>
+    <script>
+        const names = ["Squair.", "Glixed."];
+        const element = document.getElementById("name");
+        const title = document.getElementById("title");
 
-    function createLine() {
-      const line = document.createElement('div');
-      line.classList.add('line');
+        let nameIndex = 0;
+        let charIndex = 0;
+        let typing = true;
 
-      const y = Math.random() * window.innerHeight;
-      const width = 100 + Math.random() * 400;
-      const duration = 3 + Math.random() * 3;
+        function typeEffectName() {
+        const currentName = names[nameIndex];
 
-      line.style.top = `${y}px`;
-      line.style.width = `${width}px`;
-      line.style.animationDuration = `${duration}s`;
+        if (typing) {
+            element.textContent = currentName.slice(0, charIndex + 1);
+            title.textContent = "Hey, I'm "+currentName.slice(0, charIndex + 1);
+            charIndex++;
 
-      container.appendChild(line);
+            if (charIndex === currentName.length) {
+            typing = false;
+            setTimeout(typeEffectName, 3000);
+            return;
+            }
+        } else {
+            // Untype characters
+            element.textContent = currentName.slice(0, charIndex - 1);
+            title.textContent = "Hey, I'm "+currentName.slice(0, charIndex - 1);
+            charIndex--;
 
-      setTimeout(() => line.remove(), duration * 1000);
-    }
+            if (charIndex === 0) {
+            typing = true;
+            nameIndex = (nameIndex + 1) % names.length;
+            }
+        }
 
-    setInterval(createLine, 150);
-  </script>
+        setTimeout(typeEffectName, typing ? 120 : 60);
+        }
+
+        typeEffectName();
+    </script>
+    <script>
+        const overlay = document.getElementById('overlay');
+        const typed = document.getElementById('typed');
+        const subtext = document.getElementById('subtext');
+        const textToType = "C:/squair.xyz>";
+        let i = 0;
+        let isOverlayActive = true;
+
+        function typeEffect() {
+            if (i < textToType.length) {
+                typed.textContent += textToType.charAt(i);
+                i++;
+                setTimeout(typeEffect, 60);
+            } else {
+                subtext.classList.remove('subtext-hidden');
+                overlay.classList.add('ready');
+                overlay.addEventListener('click', enterSite, { once: true });
+            }
+        }
+
+        function enterSite() {
+            overlay.classList.add('hidden');
+            setTimeout(() => {
+                overlay.remove();
+                isOverlayActive = false;
+            }, 500);
+
+            typeWriter();
+        }
+        typeEffect();
+
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                if (isOverlayActive) return;
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest',
+                        inline: 'start'
+                    });
+                }
+            });
+        });
+
+        const mainContainer = document.querySelector('.horizontal-container');
+        let touchstartX = 0;
+        let touchstartY = 0;
+        let touchendX = 0;
+        let touchendY = 0;
+
+        mainContainer.addEventListener('touchstart', function(event) {
+            touchstartX = event.changedTouches[0].screenX;
+            touchstartY = event.changedTouches[0].screenY;
+        }, false);
+
+        mainContainer.addEventListener('touchmove', function(event) {
+            // Only prevent default if the swipe is more horizontal than vertical
+            const deltaX = Math.abs(event.changedTouches[0].screenX - touchstartX);
+            const deltaY = Math.abs(event.changedTouches[0].screenY - touchstartY);
+
+            if (deltaX > deltaY) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+    </script>
+
 </body>
 </html>
